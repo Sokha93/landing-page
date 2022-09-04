@@ -1,0 +1,31 @@
+$text-align: center;
+$bgColor: #000;
+$h80px: 80px;
+$w100: 100%;
+
+
+.App {
+  text-align: $text-align;
+}
+
+.header {
+  // text-align: $text-align;
+  background-color: $bgColor;
+  width: $w100;
+  height: $h80px;
+
+  @media(max-width: 699px) {
+    height: 70px;
+  }
+  @media(max-width: 599px) {
+    height: 60px;
+  }
+  @media(max-width: 499px) {
+    height: 60px;
+  }
+}
+.header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
