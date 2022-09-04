@@ -79,15 +79,6 @@ export const Mobileview = styled.div`
     }
 `;
 
-export const Triangle = styled.div`
-    width: 0; 
-    height: 0; 
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-
-    border-bottom: 5px solid red;
-`;
-
 export const DropDown = styled.div`
     display: ${props => props.active ? 'block' : 'none'};
     background-color: #fff;
@@ -111,5 +102,19 @@ export const DropDown = styled.div`
         position: absolute;
         top: -8px;
         right: 22px;
+    }
+`;
+
+export const MobileModal = styled.div`
+    display: ${props => props.opened ? 'block' : 'none'};
+    z-index: 9999;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @media(min-width: 699px) {
+        display: none;
     }
 `;

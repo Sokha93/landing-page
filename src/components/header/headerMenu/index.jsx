@@ -1,17 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import LoginIcon from '@mui/icons-material/Login';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import Divider from '@mui/material/Divider';
 import {
     MenuIcons,
     Desktopview,
     Mobileview,
     DropDown,
-    Triangle
+    MobileModal
 } from '../../../styles/styledComponents/header';
 
 const HeaderMenu = () => {
 
-    const [isActive, setIsActive] = useState(false);
+    const [openDesktopModal, setOpenDesktopModal] = useState(false);
+    const [openMobileModal, setOpenMobileModal] = useState(false);
     const clickOutside = useRef();
 
     useEffect(() => {
@@ -26,20 +29,27 @@ const HeaderMenu = () => {
         if(clickOutside.current?.contains(e.target)) {
             return
         };
-        setIsActive(false);
+        setOpenDesktopModal(false);
     }
     return (
         <MenuIcons>
             <Desktopview>
-                <div onClick={() => setIsActive(true)}>
+                <div onClick={() => setOpenDesktopModal(true)}>
                     <LoginIcon style={{width: 32, height: 32, cursor: 'pointer'}}/>
                 </div>
-                <DropDown active={ isActive } ref={ clickOutside }>
-                    asdasdasdasd
+                <DropDown active={ openDesktopModal } ref={ clickOutside }>
+                    <div>register</div>
+                    <div>log in</div>
                 </DropDown>
             </Desktopview>
             <Mobileview>
-                <MenuIcon style={{width: 32, height: 32, cursor: 'pointer'}}/>
+                <div onClick={ () => setOpenMobileModal(true) }>
+                    <MenuIcon style={{width: 32, height: 32, cursor: 'pointer'}}/>
+                </div>
+                <MobileModal opened={ openMobileModal }>
+                    <div style={{color: '#000'}} onClick={ () => setOpenMobileModal(false) }><CloseIcon/></div>
+                    <Divider variant='middle'/>
+                </MobileModal>
             </Mobileview>
         </MenuIcons>
     )
