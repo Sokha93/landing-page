@@ -1,11 +1,20 @@
 import React from 'react';
-import { LogoBlock, Link } from '../../../styles/styledComponents/header';
+import { LogoBlock } from '../../../styles/styledComponents/header';
+import { useNavigate } from 'react-router-dom';
 
 const Logo = () => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/')
+    }
+
     return (
-        <LogoBlock>
-           <Link href="#">stam</Link>
-        </LogoBlock>
+        <div onClick={() => handleClick()} style={{cursor: 'pointer'}}>
+            <LogoBlock>
+                stam
+            </LogoBlock>
+        </div>
     )
 };
 

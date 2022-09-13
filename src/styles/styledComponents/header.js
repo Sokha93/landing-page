@@ -8,6 +8,8 @@ export const MainBlock = styled.div`
 
 export const LogoBlock = styled.h1`
     text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
     @media(max-width: 699px) {
         font-size: 30px;
     }
@@ -16,15 +18,6 @@ export const LogoBlock = styled.h1`
     }
     @media(max-width: 499px) {
         font-size: 24px;
-    }
-`;
-
-export const Link = styled.a`
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: #fff;
-    &: active {
-        color: white;
     }
 `;
 

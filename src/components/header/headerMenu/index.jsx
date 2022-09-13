@@ -10,6 +10,23 @@ import {
     DropDown,
     MobileModal
 } from '../../../styles/styledComponents/header';
+import { Link } from 'react-router-dom';
+
+const styles = {
+    loginIconStyle: {
+        width: 32,
+        height: 32,
+        cursor: 'pointer'
+    },
+    menuIconStyle: {
+        width: 32,
+        height: 32,
+        cursor: 'pointer'
+    },
+    closeIconStyle: {
+        color: '#000'
+    }
+}
 
 const HeaderMenu = () => {
 
@@ -35,20 +52,50 @@ const HeaderMenu = () => {
         <MenuIcons>
             <Desktopview>
                 <div onClick={() => setOpenDesktopModal(true)}>
-                    <LoginIcon style={{width: 32, height: 32, cursor: 'pointer'}}/>
+                    <LoginIcon style={ styles.loginIconStyle }/>
                 </div>
                 <DropDown active={ openDesktopModal } ref={ clickOutside }>
-                    <div>register</div>
-                    <div>log in</div>
+                    <div>
+                        <Link 
+                            to={'/register'}
+                            onClick={ () => setOpenDesktopModal(false) }
+                        >
+                            register
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            to={'/login'}
+                            onClick={ () => setOpenDesktopModal(false) }
+                        >
+                            login
+                        </Link>
+                    </div>
                 </DropDown>
             </Desktopview>
             <Mobileview>
                 <div onClick={ () => setOpenMobileModal(true) }>
-                    <MenuIcon style={{width: 32, height: 32, cursor: 'pointer'}}/>
+                    <MenuIcon style={ styles.menuIconStyle }/>
                 </div>
                 <MobileModal opened={ openMobileModal }>
-                    <div style={{color: '#000'}} onClick={ () => setOpenMobileModal(false) }><CloseIcon/></div>
+                    <div style={ styles.closeIconStyle } onClick={ () => setOpenMobileModal(false) }><CloseIcon/></div>
                     <Divider variant='middle'/>
+                    <div>
+                        <Link
+                            to={'/register'}
+                            onClick={ () => setOpenMobileModal(false) }
+                        >
+                            register
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            to={'/login'}
+                            onClick={ () => setOpenMobileModal(false) }
+                        >
+                            login
+                        </Link>
+                    </div>
                 </MobileModal>
             </Mobileview>
         </MenuIcons>
