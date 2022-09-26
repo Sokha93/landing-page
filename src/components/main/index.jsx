@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from '@mui/material';
+// import CarouselSlider from './carousel';
 
 const mainStyle = {
     textAlign: 'center',
@@ -12,7 +13,8 @@ const Main = () => {
     return (
         <Container>
             <div style={ mainStyle }>
-            asdsadad
+                {/* <CarouselSlider /> */}
+                фывфыфыв
             </div>
         </Container>
     )
