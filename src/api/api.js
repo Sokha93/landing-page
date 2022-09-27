@@ -28,5 +28,5 @@ const postRequest = async (url, data) => {
 }
 
 export const SignUpApi = async data => {
-    return await postRequest(`${ServerUrl}/users`)
+    return await postRequest(`${ServerUrl}/users`, data)
 };

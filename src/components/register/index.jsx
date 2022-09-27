@@ -3,8 +3,9 @@ import { Container } from '@mui/system';
 import { FormBlock, InputField, Form, InputButton } from '../../styles/styledComponents/register';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { SignUpApi } from '../../api/api';
 import axios from 'axios';
-import { ApiUrl } from '../../api/config';
+import Loading from '../../assets/ui';
 
 const classes = {
     registerHeader: {
@@ -16,6 +17,8 @@ const classes = {
 }
 
 const Registerpage = () => {
+
+    const [isLoading, setIsLoading] = useState(false);
 
     // const validate = values =>  {
     //     const errors = {};
@@ -47,6 +50,22 @@ const Registerpage = () => {
     //     return errors;
     // }
 
+    const HandleFormSubmit = async (e) => {
+        let first_name, last_name, email, password;
+        // e.preventDefault();
+        setIsLoading(true);
+        const result = await SignUpApi(JSON.stringify({
+            "firstName": first_name,
+            "lastName": last_name,
+            "email": email,
+            "password": password
+        }))
+        if(result)
+        setIsLoading(false);
+
+        console.log(result)
+    }
+
 
     const formik = useFormik({
         initialValues: {
@@ -73,9 +92,7 @@ const Registerpage = () => {
             .required('Required')
 
         }),
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2))
-        }
+        onSubmit: HandleFormSubmit()
     })
 
 
@@ -132,7 +149,11 @@ const Registerpage = () => {
                         { ...formik.getFieldProps('password') }
                     />
                     { formik.touched.password && formik.errors.password ? <div>{ formik.errors.password }</div> : null }
-                    <InputButton type='button' >submit</InputButton>
+                    {
+                        isLoading ?
+                        <Loading /> :
+                        <InputButton type='button' >submit</InputButton>
+                    }
                 </Form>
             </FormBlock>
         </Container>
