@@ -30,3 +30,7 @@ const postRequest = async (url, data) => {
 export const SignUpApi = async data => {
     return await postRequest(`${ServerUrl}/users`, data)
 };
+
+export const checkLoginApi = async login => {
+    return await getRequest(`${ServerUrl}/users?login=${login}`)
+}
