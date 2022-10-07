@@ -8,7 +8,10 @@ import {
     Desktopview,
     Mobileview,
     DropDown,
-    MobileModal
+    MobileModal,
+    DesktopLinks,
+    MobileLinks,
+    StyledLink
 } from '../../../styles/styledComponents/header';
 import { Link } from 'react-router-dom';
 
@@ -55,24 +58,25 @@ const HeaderMenu = () => {
                     <LoginIcon style={ styles.loginIconStyle }/>
                 </div>
                 <DropDown active={ openDesktopModal } ref={ clickOutside }>
-                    <div>
-                        <Link 
+                    <DesktopLinks>
+                        <StyledLink 
                             to={'/register'}
                             onClick={ () => setOpenDesktopModal(false) }
                         >
-                            register
-                        </Link>
-                    </div>
-                    <div>
-                        <Link
+                            Sign up
+                        </StyledLink>
+                    </DesktopLinks>
+                    <DesktopLinks>
+                        <StyledLink
                             to={'/login'}
                             onClick={ () => setOpenDesktopModal(false) }
                         >
-                            login
-                        </Link>
-                    </div>
+                            Sign in
+                        </StyledLink>
+                    </DesktopLinks>
                 </DropDown>
             </Desktopview>
+
             <Mobileview>
                 <div onClick={ () => setOpenMobileModal(true) }>
                     <MenuIcon style={ styles.menuIconStyle }/>
@@ -80,21 +84,21 @@ const HeaderMenu = () => {
                 <MobileModal opened={ openMobileModal }>
                     <div style={ styles.closeIconStyle } onClick={ () => setOpenMobileModal(false) }><CloseIcon/></div>
                     <Divider variant='middle'/>
-                    <div>
+                    <MobileLinks>
                         <Link
                             to={'/register'}
                             onClick={ () => setOpenMobileModal(false) }
                         >
                             register
                         </Link>
-                    </div>
+                    </MobileLinks>
                     <div>
-                        <Link
+                        <MobileLinks
                             to={'/login'}
                             onClick={ () => setOpenMobileModal(false) }
                         >
                             login
-                        </Link>
+                        </MobileLinks>
                     </div>
                 </MobileModal>
             </Mobileview>

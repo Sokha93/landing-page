@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 export const MainBlock = styled.div`
     display: flex;
@@ -110,4 +111,28 @@ export const MobileModal = styled.div`
     @media(min-width: 699px) {
         display: none;
     }
+`;
+
+export const MobileLinks = styled.div`
+
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+    transition: .3s;
+    margin-bottom: 12px;
+    padding: ;
+
+
+    &:hover{
+        /* background-color: #000; */
+        color: #BFB3B3;
+    }
+`;
+
+export const DesktopLinks = styled.div`
 `;

@@ -34,3 +34,7 @@ export const SignUpApi = async data => {
 export const checkLoginApi = async login => {
     return await getRequest(`${ServerUrl}/users?login=${login}`)
 }
+
+export const getData = async () => {
+    return await getRequest(`${ServerUrl}`)
+}

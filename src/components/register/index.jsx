@@ -3,11 +3,11 @@ import { Container } from '@mui/system';
 import { FormBlock, InputField, Form, InputButton } from '../../styles/styledComponents/register';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { SignUpApi, checkLoginApi } from '../../api/api';
+import { SignUpApi, checkLoginApi, getData } from '../../api/api';
 import axios from 'axios';
 import Loading from '../../assets/ui';
 import md5 from 'md5';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const classes = {
     registerHeader: {
@@ -26,7 +26,7 @@ const Registerpage = () => {
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
     const [formTextError, setFormtextError] = useState(null);
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -163,7 +163,7 @@ const Registerpage = () => {
                         placeholder='first name'
                         name='firstName'
                         onChange={ handleChangeName }
-                        value={ name }
+                        // value={ name }
                         required
                     />
                     <label htmlFor="lastName">Last name</label>
@@ -173,7 +173,7 @@ const Registerpage = () => {
                         placeholder='last name'
                         name='lastName'
                         onChange={ handleChangeSurname }
-                        value={ lastName }
+                        // value={ lastName }
                         required
                     />
                     <label htmlFor="login">Email</label>
@@ -183,7 +183,7 @@ const Registerpage = () => {
                         placeholder='login'
                         name='login'
                         onChange={ handleChangeLogin }
-                        value={ login }
+                        // value={ login }
                         required
                     />
                     <label htmlFor="password">Password</label>
@@ -193,13 +193,15 @@ const Registerpage = () => {
                         type='password'
                         name='password'
                         onChange={ handleChangePassword }
-                        value={ password }
+                        // value={ password }
                         required
                     />
                     {
                         isLoading ?
                         <Loading /> :
-                        <InputButton type='button' onClick={() => history.push('/')}>submit</InputButton>
+                        <InputButton type='button' 
+                        onClick={() => navigate('/')}
+                        >submit</InputButton>
                     }
                 </Form>
             </FormBlock>
