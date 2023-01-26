@@ -69,7 +69,6 @@ const Registerpage = () => {
         if(result) {
             setIsLoading(false);
         }
-        console.log(result)
     }
 
     // const validate = values =>  {

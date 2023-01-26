@@ -1,0 +1,18 @@
+{
+    "russian": {
+        "title": "Проект",
+        "lang_ru": "Русский",
+        "about_us": "О нас",
+        "news": "новости",
+        "contacts": "контакты",
+        "interesting": "интересно"
+    },
+    "english" : {
+        "title": "Project",
+        "lang_en": "English",
+        "about_us": "About us",
+        "news": "news",
+        "contacts": "contacts",
+        "interesting": "interesting"
+    }
+}

@@ -1,17 +1,30 @@
 import React from 'react';
 import Logo from './logo';
-import { MainBlock } from '../../styles/styledComponents/header';
+import { MainBlock, MenuAndSelect } from '../../styles/styledComponents/header';
 import { Container } from '@mui/material';
 import Nav from './navbar/index';
 import HeaderMenu from './headerMenu';
+import SwitchLang from './switchLang';
 
 const Header = () => {
+
+  const style = { 
+    menuAndSelect : {
+      width: '150px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'   
+    }
+  }
   return (
     <Container>
       <MainBlock>
         <Logo />
         <Nav />
-        <HeaderMenu />
+        <MenuAndSelect>
+          <SwitchLang />
+          <HeaderMenu />
+        </MenuAndSelect>
       </MainBlock>
     </Container>
   )

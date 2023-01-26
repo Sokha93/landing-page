@@ -7,6 +7,14 @@ export const MainBlock = styled.div`
     align-items: center;
 `;
 
+export const MenuAndSelect = styled.div`
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+`;
+
 export const LogoBlock = styled.h1`
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -45,7 +53,7 @@ export const Navbar = styled.nav`
         &:hover {
             border-bottom: 1px solid #fff;
         }
-        &: active {
+        &:active {
             color: #fff;
         }
     }
@@ -125,7 +133,7 @@ export const StyledLink = styled(Link)`
     /* text-transform: uppercase; */
     transition: .3s;
     margin-bottom: 12px;
-    padding: ;
+    /* padding: ; */
 
 
     &:hover{
