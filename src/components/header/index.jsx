@@ -8,22 +8,14 @@ import SwitchLang from './switchLang';
 
 const Header = () => {
 
-  const style = { 
-    menuAndSelect : {
-      width: '150px',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center'   
-    }
-  }
   return (
     <Container>
       <MainBlock>
         <Logo />
         <Nav />
         <MenuAndSelect>
-          <SwitchLang />
           <HeaderMenu />
+          <SwitchLang />
         </MenuAndSelect>
       </MainBlock>
     </Container>

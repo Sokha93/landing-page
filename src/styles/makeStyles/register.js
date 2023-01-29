@@ -1,15 +1,9 @@
-// import { makeStyles } from "@mui/material";
+// import { makeStyles } from "@mui/styles";
 
-// const useStyles = makeStyles({
-//     formDiv: {
-//         width: '100px'
-//     },
-//     registerHeader: {
-//         textAlign: 'center',
-//         marginTop: '50px',
-//         textTransform: 'uppercase',
-//         letterSpacing: '1.5px'
+// export const useStyles = makeStyles({
+//     muiInput: {
+//         '&.MuiSelect-nativeInput': {
+//             color: 'red'
+//         }
 //     }
 // })
-
-// export default useStyles;

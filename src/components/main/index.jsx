@@ -12,7 +12,8 @@ const Main = () => {
     return (
         <Container>
             <div style={ mainStyle }>
-                hello
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
             </div>
         </Container>
     )
