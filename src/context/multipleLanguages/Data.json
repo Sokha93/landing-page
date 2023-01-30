@@ -3,18 +3,20 @@
         "title": "Проект",
         "russian_lang": "Рус",
         "about_us": "О нас",
-        "news": "новости",
-        "contacts": "контакты",
-        "interesting": "интересно",
-        "english_lang": "Анг"
+        "news": "Новости",
+        "contacts": "Контакты",
+        "interesting": "Интересно",
+        "english_lang": "Анг",
+        "all_projects": "Все проекты"
     },
     "english" : {
         "title": "Project",
         "lang_en": "Eng",
         "lang_ru": "Rus",
         "about_us": "About us",
-        "news": "news",
-        "contacts": "contacts",
-        "interesting": "interesting"
+        "news": "News",
+        "contacts": "Contacts",
+        "interesting": "Interesting",
+        "all_projects": "All projects"
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LogoBlock } from '../../../styles/styledComponents/header';
+import { LogoBlock, LogoSpan } from '../../../styles/styledComponents/header';
 import { useNavigate } from 'react-router-dom';
 
 const Logo = () => {
@@ -12,7 +12,7 @@ const Logo = () => {
     return (
         <div onClick={() => handleClick()} style={{cursor: 'pointer'}}>
             <LogoBlock>
-                stam
+                SN<LogoSpan>project</LogoSpan>
             </LogoBlock>
         </div>
     )

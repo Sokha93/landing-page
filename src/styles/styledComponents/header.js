@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
 export const MainBlock = styled.div`
+    height: 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,18 +16,30 @@ export const MenuAndSelect = styled.div`
 
 `;
 
-export const LogoBlock = styled.h1`
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
-    @media(max-width: 699px) {
-        font-size: 30px;
+export const LogoBlock = styled.div`
+    letter-spacing: .8px;
+    color: #bdbdbf;
+    font-size: 18px;
+    transition: all .3s;
+    &:hover {
+        color: #fff
     }
     @media(max-width: 599px) {
-        font-size: 26px;
+        font-size: 16px;
     }
     @media(max-width: 499px) {
-        font-size: 24px;
+        font-size: 14px;
+    }
+`;
+
+export const LogoSpan = styled.span`
+    font-size: 8px;
+    margin-left: 4px;
+    @media(max-width: 559px) {
+        font-size: 7px;
+    }
+    @media(max-width: 499px) {
+        font-size: 6px;
     }
 `;
 
@@ -40,21 +53,24 @@ export const Navbar = styled.nav`
     & > ul > li {
         display: inline-block;
         margin-right: 50px;
-        height: 25px;
+        /* height: 25px; */
     }
 
     &> ul> li > a {
         text-decoration: none;
-        color: #fff;
-        text-transform: uppercase;
-        font-weight: 500;
-        letter-spacing: 1px;
-        padding: 8px 4px;
+        color: #bdbdbf;
+        background-position: center center;
+        font-size: 14px;
+        transition: all 0.5s;
         &:hover {
-            border-bottom: 1px solid #fff;
+            color: #fff;
+            transition: all 0.3s;
         }
         &:active {
             color: #fff;
+        }
+        @media(max-width: 859px) {
+            font-size: 12px;
         }
     }
     @media(max-width: 699px) {
@@ -130,10 +146,8 @@ export const StyledLink = styled(Link)`
     font-size: 18px;
     color: #000;
     font-weight: 600;
-    /* text-transform: uppercase; */
     transition: .3s;
     margin-bottom: 12px;
-    /* padding: ; */
 
 
     &:hover{

@@ -1,7 +1,8 @@
 $text-align: center;
-$bgColor: green;
-$h80px: 80px;
+$bgColor: #272729;
+$h80px: 48px;
 $w100: 100%;
+$posrel: relative;
 
 
 .App {
@@ -13,16 +14,15 @@ $w100: 100%;
   background-color: $bgColor;
   width: $w100;
   height: $h80px;
-
-  @media(max-width: 699px) {
-    height: 70px;
-  }
-  @media(max-width: 599px) {
-    height: 60px;
-  }
-  @media(max-width: 499px) {
-    height: 60px;
-  }
+  // @media(max-width: 699px) {
+  //   height: 70px;
+  // }
+  // @media(max-width: 599px) {
+  //   height: 60px;
+  // }
+  // @media(max-width: 499px) {
+  //   height: 60px;
+  // }
 }
 .header::after {
   content: '';

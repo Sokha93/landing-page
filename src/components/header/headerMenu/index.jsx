@@ -17,14 +17,18 @@ import { Link } from 'react-router-dom';
 
 const styles = {
     loginIconStyle: {
-        width: 32,
-        height: 32,
-        cursor: 'pointer'
+        width: 28,
+        height: 28,
+        cursor: 'pointer',
+        color: 'bdbdbf',
+        '&:hover': {
+            color: '#fff !important'
+        }
     },
     menuIconStyle: {
         width: 32,
         height: 32,
-        cursor: 'pointer'
+        cursor: 'pointer',
     },
     closeIconStyle: {
         color: '#000'

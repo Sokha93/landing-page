@@ -15,6 +15,58 @@ const Main = () => {
                 <textarea name="" id="" cols="30" rows="10"></textarea>
                 <button>click</button>
             </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
+            <div style={ mainStyle }>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button>click</button>
+            </div>
         </Container>
     )
 };

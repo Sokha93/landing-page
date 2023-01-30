@@ -13,10 +13,11 @@ const Header = () => {
       <MainBlock>
         <Logo />
         <Nav />
-        <MenuAndSelect>
-          <HeaderMenu />
+        <HeaderMenu />
+
+        {/* <MenuAndSelect>
           <SwitchLang />
-        </MenuAndSelect>
+        </MenuAndSelect> */}
       </MainBlock>
     </Container>
   )
