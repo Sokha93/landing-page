@@ -10,30 +10,30 @@ const StickyHeader = () => {
 
     const classes = {
         sticky: {
-            backgroundColor: '#fff',
             background: isSticky 
             ? '#fff'
             : '',
             width: '100%',
             top: isSticky ? 0 : '48px',
-            zIndex: 999,
+            zIndex: 10,
             height: '56px',
-            display: 'flex',
-            alignItems: 'center',
             borderBottom: '1px solid #838387',
             opacity: 0.9,
             position: isSticky
             ? 'fixed'
             : 'absolute'
         },
-        stickyBlock: {
-            backgroundColor: 'green'
+        container: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '100%'
         }
     }
 
     const handleScroll = () => {
         const windowScroll = window.scrollY;
-        if(windowScroll > 10){
+        if(windowScroll > 48){
             setIsSticky(true);
         }else {
             setIsSticky(false);
@@ -46,14 +46,15 @@ const StickyHeader = () => {
     },[])
 
     return (
-        <div>
-            <div style={classes.sticky}>
-                <Container>
-                    <div className={classes.stickyBlock}>
-                        <a>{ t.all_projects }</a>
-                    </div>
-                </Container>
-            </div>
+        <div style={classes.sticky}>
+            <Container style={classes.container}>
+                <a style={{color: '#000'}}>{ t.all_projects }</a>
+                <select name="" id="">
+                    <option value="">awd</option>
+                    <option value="">awd</option>
+                    <option value="">awd</option>
+                </select>
+            </Container>
         </div>
     )
 };
