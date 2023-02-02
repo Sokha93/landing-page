@@ -5,13 +5,17 @@ const mainStyle = {
     textAlign: 'center',
     marginTop: '50px'
 }
+const mainstyle={
+    textAlign: 'center',
+    marginTop: '100px'
+}
 
 const Main = () => {
 
     
     return (
         <Container>
-            <div style={ mainStyle }>
+            <div style={ mainstyle }>
                 <textarea name="" id="" cols="30" rows="10"></textarea>
                 <button>click</button>
             </div>

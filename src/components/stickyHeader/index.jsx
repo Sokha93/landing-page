@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from '@mui/material';
 import useLanguage from '../../context/multipleLanguages/hook'; 
-import { DownHeaderBlock } from '../../styles/styledComponents/downHeader';
 
 const StickyHeader = () => {
 
-    const { t } = useLanguage();
+    const { t, language, setLanguage } = useLanguage();
     const [isSticky, setIsSticky] = useState(false);
+
+    const handleChange = (event) => {
+        setLanguage(event.target.value);
+    };
 
     const classes = {
         sticky: {
@@ -48,11 +51,10 @@ const StickyHeader = () => {
     return (
         <div style={classes.sticky}>
             <Container style={classes.container}>
-                <a style={{color: '#000'}}>{ t.all_projects }</a>
-                <select name="" id="">
-                    <option value="">awd</option>
-                    <option value="">awd</option>
-                    <option value="">awd</option>
+                <a>{ t.all_projects }</a>
+                <select name="" id="" value={language} onChange={handleChange}>
+                    <option value="russian">{language === 'russian' ? t.russian_lang : t.lang_ru }</option>
+                    <option value="english">{language === 'english' ? t.lang_en : t.english_lang }</option>
                 </select>
             </Container>
         </div>
