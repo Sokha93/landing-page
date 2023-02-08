@@ -10,7 +10,7 @@ const  App = () => {
       <LanguageProvider>
           <div className='header'>
             <Header />
-            <StickyHeader />
+            {/* <StickyHeader /> */}
             <Routers />
         </div>
       </LanguageProvider>

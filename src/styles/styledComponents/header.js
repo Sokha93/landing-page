@@ -99,9 +99,9 @@ export const Mobileview = styled.div`
 
 export const DropDown = styled.div`
     display: ${props => props.active ? 'block' : 'none'};
-    background-color: #fff;
+    background-color: #272729;
     position: absolute;
-    top: 58px;
+    top: 54px;
     right: -20px;
     width: 200px;
     border-radius: 4px;
@@ -114,12 +114,12 @@ export const DropDown = styled.div`
         display: block;
         width: 0;
         height: 0;
-        border-right: 10px solid transparent;
-        border-bottom: 8px solid #ffffff;
-        border-left: 10px solid transparent;
+        border-right: 16px solid transparent;
+        border-bottom: 12px solid #272729;
+        border-left: 16px solid transparent;
         position: absolute;
-        top: -8px;
-        right: 22px;
+        top: -12px;
+        right: 14px;
     }
 `;
 

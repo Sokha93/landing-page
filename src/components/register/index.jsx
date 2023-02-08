@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from '@mui/system';
-import { FormBlock, InputField, Form, InputButton } from '../../styles/styledComponents/register';
+import {
+    FormBlock,
+    InputField,
+    Form,
+    InputButton,
+    MainBlock
+} from '../../styles/styledComponents/register';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { SignUpApi, checkLoginApi, getData } from '../../api/api';
@@ -22,53 +28,63 @@ const Registerpage = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [name,  setName] = useState('');
-    const [login, setLogin] = useState('')
     const [lastName, setLastName] = useState('');
+    const [login, setLogin] = useState('')
     const [password, setPassword] = useState('');
+    const [check, setCheck] = useState('');
     const [formTextError, setFormtextError] = useState(null);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = checkLoginApi(login);
-            if(result.length > 0) {
-                setFormtextError('This login is busy')
-            } else{
-                setFormtextError(null);
-            }
-            if(result.length > 3) {
-                fetchData();
-            } else {
-                setFormtextError(null);
-            }
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const result = checkLoginApi(login);
+    //         if(result.length > 0) {
+    //             setFormtextError('This login is busy')
+    //         } else{
+    //             setFormtextError(null);
+    //         }
+    //         if(result.length > 3) {
+    //             fetchData();
+    //         } else {
+    //             setFormtextError(null);
+    //         }
+    //     };
         
-    }, [login]);
+    // }, [login]);
 
-    const handleChangeName = e => {
-        setName({name: e.target.value})
-    };
+    // const handleChangeName = e => {
+    //     setName({name: e.target.value})
+    // };
 
-    const handleChangeSurname = e => {
-        setLastName({lastName: e.target.value});
-    };
+    // const handleChangeSurname = e => {
+    //     setLastName({lastName: e.target.value});
+    // };
 
-    const handleChangeLogin = e => {
-        setLogin({login: e.target.vale});
-    };
+    // const handleChangeLogin = e => {
+    //     setLogin({login: e.target.vale});
+    // };
 
-    const handleChangePassword = e => {
-        setPassword({password: e.target.value});
-    };
+    // const handleChangePassword = e => {
+    //     setPassword({password: e.target.value});
+    // };
 
     const handleSubmit = e => {
-        e.preventDefault();
-        setIsLoading(true);
-        const result = SignUpApi(JSON.stringify({"name": name, "last_name": lastName, "login": login, "password": md5(password)}));
-
-        if(result) {
-            setIsLoading(false);
+        // e.preventDefault();
+        if(name === ''){
+            alert('name field is reqiured')
+        } else if(lastName === '') {
+            alert('last name is required')
+        }else if (password === '') {
+            alert('password is required')
+        }else if(password !== check) {
+            alert('wrong repeating')
+        }else {
+            localStorage.setItem('name', name)
+            localStorage.setItem('lastName', lastName)
+            localStorage.setItem('password', md5(password))
+            alert('success')
         }
+
     }
 
     // const validate = values =>  {
@@ -148,21 +164,20 @@ const Registerpage = () => {
 
 
     return (
-        <Container>
+        <>
             <h1 style={ classes.registerHeader }>Register</h1>
             <FormBlock>
                 <Form 
                 onSubmit={ handleSubmit }
                 >
-                    {formTextError && <div>{ formTextError }</div>}
                     <label htmlFor="firstName">First name</label>
                     <InputField
                         id='firstName'
                         type='text'
                         placeholder='first name'
                         name='firstName'
-                        onChange={ handleChangeName }
-                        // value={ name }
+                        onChange={ e => setName(e.target.value) }
+                        value={ name }
                         required
                     />
                     <label htmlFor="lastName">Last name</label>
@@ -171,18 +186,8 @@ const Registerpage = () => {
                         type='text'
                         placeholder='last name'
                         name='lastName'
-                        onChange={ handleChangeSurname }
-                        // value={ lastName }
-                        required
-                    />
-                    <label htmlFor="login">Email</label>
-                    <InputField
-                        type='text'
-                        id='login'
-                        placeholder='login'
-                        name='login'
-                        onChange={ handleChangeLogin }
-                        // value={ login }
+                        onChange={ e => setLastName(e.target.value) }
+                        value={ lastName }
                         required
                     />
                     <label htmlFor="password">Password</label>
@@ -191,20 +196,28 @@ const Registerpage = () => {
                         placeholder='password'
                         type='password'
                         name='password'
-                        onChange={ handleChangePassword }
-                        // value={ password }
+                        onChange={ e => setPassword(e.target.value) }
+                        value={ password }
                         required
                     />
-                    {
-                        isLoading ?
-                        <Loading /> :
+                    <label htmlFor="checkPassword">Last name</label>
+                    <InputField
+                        id='checkpassword'
+                        type='password'
+                        placeholder='check password'
+                        name='checkPassword'
+                        onChange={ e => setCheck(e.target.value) }
+                        value={ check }
+                        required
+                    />
                         <InputButton type='button' 
-                        onClick={() => navigate('/')}
-                        >submit</InputButton>
-                    }
+                            onClick={() => handleSubmit()}
+                        >
+                            submit
+                        </InputButton>
                 </Form>
             </FormBlock>
-        </Container>
+        </>
     )
 };
 

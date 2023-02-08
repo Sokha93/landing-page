@@ -6,6 +6,13 @@ export const FormBlock = styled.div`
     /* margin-top: 50px; */
 `;
 
+export const MainBlock = styled.section`
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: red;
+`;
+
 export const InputField = styled.input`
     /* width: 100%; */
     height: 42px;
@@ -49,18 +56,18 @@ export const InputButton = styled.button`
       padding: 4px;
       border-radius: 4px;
       border: 1px solid transparent;
-      background-color: #000;
-      color: #fff;
+      background-color: #272729;
+      color: #bdbdbf;
       box-shadow: 1px 10px 10px 0 rgba(0, 59, 110, 0.1);
-      transition: .2s;
+      transition: all .3s;
       text-transform: uppercase;
       font-weight: 500;
       letter-spacing: 1px;
       font-size: large;
 
       &:hover {
-        background-color: #fff;
-        color: #000;
+        /* background-color: #fff; */
+        color: #fff;
       }
       &:active {
         background-color: green;

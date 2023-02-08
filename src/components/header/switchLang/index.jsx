@@ -40,30 +40,10 @@ const SwitchLang = () => {
 
     return (
         <div>
-            <FormControl
-            //  sx={classes.muiFormControl}
-            
-            >
-                <InputLabel 
-                // sx={classes.muiLabel}
-                 id="demo-simple-select-autowidth-label"><LanguageIcon style={{width: '28px', height: '28px'}}/></InputLabel>
-                <Select
-                    // sx={classes.muiSelect}
-                    labelId="demo-simple-select-autowidth-label"
-                    id="demo-simple-select-autowidth"
-                    value={language}
-                    onChange={handleChange}
-                    autoWidth
-                    label={'language'}
-                >
-                    <MenuItem 
-                    // sx={classes.muiInput} 
-                    value={'russian'}>{language === 'russian' ? t.russian_lang : t.lang_ru }</MenuItem>
-                    <MenuItem 
-                    // sx={classes.muiInput} 
-                    value={'english'}>{language === 'english' ? t.lang_en : t.english_lang }</MenuItem>
-                </Select>
-            </FormControl>
+            <select value={language} onChange={handleChange} name="" id="">
+                <option value="russian">rus</option>
+                <option value="english">eng</option>
+            </select>
         </div>
     )
 };
