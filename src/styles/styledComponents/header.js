@@ -115,7 +115,7 @@ export const DropDown = styled.div`
         width: 0;
         height: 0;
         border-right: 16px solid transparent;
-        border-bottom: 12px solid #272729;
+        border-bottom: 14px solid #272729;
         border-left: 16px solid transparent;
         position: absolute;
         top: -12px;
@@ -143,16 +143,16 @@ export const MobileLinks = styled.div`
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
-    font-size: 18px;
-    color: #000;
-    font-weight: 600;
-    transition: .3s;
+    font-size: 14px;
+    color: #bdbdbf;
+    transition: all .3s;
     margin-bottom: 12px;
+    
 
 
     &:hover{
-        /* background-color: #000; */
-        color: #BFB3B3;
+
+        color: #fff;
     }
 `;
 

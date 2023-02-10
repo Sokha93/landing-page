@@ -1,17 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Container } from '@mui/material';
+import { Container } from '@mui/system';
+import CarouselSlider from './carousel';
 
 
 const Main = () => {
 
     return (
-        <>
-            <Container>
-                <div>
-                    <button>baton</button>
-                </div>
-            </Container>
-        </>
+        <Container>
+            <CarouselSlider />
+        </Container>
     )
 };
 
