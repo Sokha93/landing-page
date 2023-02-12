@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Thumbs } from 'swiper';
+import { Autoplay, Navigation, Thumbs } from 'swiper';
 import { Image } from '../../../styles/styledComponents/main/carousel'
 import './carousel.scss'
 import 'swiper/css';
@@ -23,54 +23,47 @@ const slides = [ Img, Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9 ]
 
 const CarouselSlider = () => {
 
-    // const [active, setActive] = useState();
-
     return(
-        <div style={{
-            // height: '100vh',/
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        }}>
-            <div style={{
-                width: '800px',
-                height: '700px',
-                backgroundColor: '#fff',
-                padding: '20px'
-            }}>
-                <Swiper
-                    // thumbs={{swiper: active}}
-                    loop={true}
-                    spaceBetween={10}
-                    navigation={true}
-                    modules={[Navigation, Thumbs]}
-                    grabCursor={true}
-                    className={'swiper-slider'}
-                >
-                    {slides.map((slide, index) => (
-                        <SwiperSlide key={index}>
-                            <img src={slide} />
-                        </SwiperSlide> 
-                    ))}
-                </Swiper>
-                {/* <Swiper
-                    onSwiper={setActive}
-                    loop={true}
-                    spaceBetween={10}
-                    slidesPerView={4}
-                    modules={[Navigation, Thumbs]}
-                    className={'swiper-slider-second'}
-                >
-                    {slides.map((slide, index) => (
-                        <SwiperSlide>
-                            <div key={index} className='swiper-slider-second'>
-                                <img src={slide} alt="Slider images"/>
-                            </div>
-                        </SwiperSlide> 
-                    ))}
-                </Swiper> */}
+        <>
+            <div className='main-header'>
+                <div className='h1'>lorem ipsum</div>
+                <div className='p'>lorem ipsum dolor</div>
             </div>
-        </div>
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+                
+                <div style={{
+                    width: '800px',
+                    backgroundColor: '#fff',
+                    padding: '20px',
+                    borderRadius: 12
+                }}>
+                    <Swiper
+                        // thumbs={{swiper: active}}
+                        speed={2000}
+                        loop={true}
+                        spaceBetween={10}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false
+                        }}
+                        navigation={true}
+                        modules={[Autoplay, Navigation, Thumbs]}
+                        grabCursor={true}
+                        className={'swiper-slider'}
+                    >
+                        {slides.map((slide, index) => (
+                            <SwiperSlide key={index}>
+                                <img className='images-slide' src={slide} />
+                            </SwiperSlide> 
+                        ))}
+                    </Swiper>
+                </div>
+            </div>
+        </>
     )
 };
 

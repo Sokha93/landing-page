@@ -8,8 +8,8 @@ const Main = () => {
 
     return (
         <Container>
-            <MainBlock />
             <CarouselSlider />
+            <MainBlock />
         </Container>
     )
 };
