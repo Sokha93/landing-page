@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Thumbs } from 'swiper';
 import { Image } from '../../../styles/styledComponents/main/carousel'
+import useLanguage from '../../../context/multipleLanguages/hook';
 import './carousel.scss'
 import 'swiper/css';
 import 'swiper/css/autoplay'
@@ -23,11 +24,25 @@ const slides = [ Img, Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9 ]
 
 const CarouselSlider = () => {
 
+    const { t } = useLanguage();
+
     return(
         <>
             <div className='main-header'>
-                <div className='h1'>lorem ipsum</div>
-                <div className='p'>lorem ipsum dolor</div>
+                <div className='h1'>{t.welcome}</div>
+                <div className='p'>{t.main_text}</div>
+                <div className='testing-block'>
+                    <div className='testing-block2'>
+                        <p>!!!ВРЕМЕННЫЙ БЛОК!!!</p>
+                        <p>
+                            Описание...<br/>
+                            Работает мультиязычность(кроме этого блока).
+                            Добавлены 2 модалки десктоп и мобайл, осталось доработать дизайн мобильной версии модалки, это в процессе.
+                            Доработка селектор языков в процессе
+
+                        </p>
+                    </div>
+                </div>
             </div>
             <div style={{
                 display: 'flex',

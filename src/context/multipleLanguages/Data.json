@@ -7,7 +7,9 @@
         "contacts": "Контакты",
         "interesting": "Интересно",
         "english_lang": "Анг",
-        "all_projects": "Все проекты"
+        "all_projects": "Все проекты",
+        "welcome": "Добро пожаловать!",
+        "main_text": "Проект часто обновляется новыми идеями"
     },
     "english" : {
         "title": "Project",
@@ -17,6 +19,8 @@
         "news": "News",
         "contacts": "Contacts",
         "interesting": "Interesting",
-        "all_projects": "All projects"
+        "all_projects": "All projects",
+        "welcome": "Welcome!",
+        "main_text": "The project often updates with new ideas"
     }
 }

@@ -52,13 +52,26 @@
 }
 
 .h1, .p {
-    text-transform: capitalize;
     color: #272729;
 }
 .h1 {
-    font-size: 60px;
+    font-size: 52px;
     font-weight: 600;
 }
 .p{
-    font-size: 32px;
+    font-size: 24px;
+}
+
+.testing-block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.testing-block2{
+    background-color: #272729;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 12px;
+    width: 50%;
+    color: #fff;
 }
