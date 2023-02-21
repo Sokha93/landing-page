@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Thumbs } from 'swiper';
-import { Image } from '../../../styles/styledComponents/main/carousel'
 import useLanguage from '../../../context/multipleLanguages/hook';
 import './carousel.scss'
 import 'swiper/css';
@@ -33,7 +32,7 @@ const CarouselSlider = () => {
                 <div className='p'>{t.main_text}</div>
                 <div className='testing-block'>
                     <div className='testing-block2'>
-                        <p>!!!ВРЕМЕННЫЙ БЛОК!!!</p>
+                        <p>Временный блок!!!</p>
                         <p>
                             Описание...<br/>
                             Работает мультиязычность(кроме этого блока).
