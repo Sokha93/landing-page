@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from '@mui/system';
 import {
     FormBlock,
     InputField,
@@ -9,11 +8,10 @@ import {
 } from '../../styles/styledComponents/register';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { SignUpApi, checkLoginApi, getData } from '../../api/api';
-import axios from 'axios';
-import Loading from '../../assets/ui';
 import md5 from 'md5';
 import {useNavigate} from 'react-router-dom';
+import { signUp } from '../../api/api';
+import './style.css';
 
 const classes = {
     registerHeader: {
@@ -27,167 +25,55 @@ const classes = {
 const Registerpage = () => {
 
     const [isLoading, setIsLoading] = useState(false);
+    const [loadingShow, setLoadingShow] = useState(false);
     const [name,  setName] = useState('');
-    const [lastName, setLastName] = useState('');
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('');
-    const [check, setCheck] = useState('');
     const [formTextError, setFormtextError] = useState(null);
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const result = checkLoginApi(login);
-    //         if(result.length > 0) {
-    //             setFormtextError('This login is busy')
-    //         } else{
-    //             setFormtextError(null);
-    //         }
-    //         if(result.length > 3) {
-    //             fetchData();
-    //         } else {
-    //             setFormtextError(null);
-    //         }
-    //     };
-        
-    // }, [login]);
 
-    // const handleChangeName = e => {
-    //     setName({name: e.target.value})
-    // };
+    const handleSubmit = async event => {
+        // event.preventDefault();
+        setIsLoading(true);
+        setLoadingShow(true);
+        let result = await signUp({ name, login, password: md5(password) });
+        if(result) {
+            setIsLoading(false);
+            setName('')
+            setLogin('');
+            setPassword('')
 
-    // const handleChangeSurname = e => {
-    //     setLastName({lastName: e.target.value});
-    // };
-
-    // const handleChangeLogin = e => {
-    //     setLogin({login: e.target.vale});
-    // };
-
-    // const handleChangePassword = e => {
-    //     setPassword({password: e.target.value});
-    // };
-
-    const handleSubmit = e => {
-        // e.preventDefault();
-        if(name === ''){
-            alert('name field is reqiured')
-        } else if(lastName === '') {
-            alert('last name is required')
-        }else if (password === '') {
-            alert('password is required')
-        }else if(password !== check) {
-            alert('wrong repeating')
-        }else {
-            localStorage.setItem('name', name)
-            localStorage.setItem('lastName', lastName)
-            localStorage.setItem('password', md5(password))
-            alert('success')
-        }
+        };
+        console.log(result);
 
     }
-
-    // const validate = values =>  {
-    //     const errors = {};
-
-    //     if(!values.firstName) {
-    //         errors.firstName = 'Required';
-    //     } else if (values.firstName.length < 5) {
-    //         errors.firstName = 'must be at least 5 words'
-    //     }
-
-    //     if(!values.lastName) {
-    //         errors.lastName = 'Required';
-    //     } else if (values.lastName.length < 5) {
-    //         errors.lastName = 'must be at least 5 words'
-    //     }
-
-    //     if(!values.email) {
-    //         errors.email = 'Required';
-    //     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    //         errors.firstName = 'Invalid email address'
-    //     }
-
-    //     if(!values.password) {
-    //         errors.password = 'Required'
-    //     } else if (values.password.length < 8) {
-    //         errors.password = 'must be at least 8 characters'
-    //     }
-
-    //     return errors;
-    // }
-
-    // const HandleFormSubmit = async (e) => {
-    //     let first_name, last_name, email, password;
-    //     // e.preventDefault();
-    //     setIsLoading(true);
-    //     const result = await SignUpApi(JSON.stringify({
-    //         "firstName": first_name,
-    //         "lastName": last_name,
-    //         "email": email,
-    //         "password": password
-    //     }))
-    //     if(result)
-    //     setIsLoading(false);
-
-    //     console.log(result)
-    // }
-
-
-    // const formik = useFormik({
-    //     initialValues: {
-    //         email: '',
-    //         firstName: '',
-    //         lastName: '',
-    //         password: ''
-    //     },
-    //     validationSchema: Yup.object({
-    //         firstName: Yup.string()
-    //         .max(15, 'must`nt be more than 15 characters')
-    //         .min(4, 'must be 4 characters at least')
-    //         .required('required'),
-    //     lastName: Yup.string()
-    //         .max(15, 'must`nt be more than 15 characters')
-    //         .min(4, 'must be 4 characters at least')
-    //         .required('required'),
-    //     email: Yup.string()
-    //         .email('Invalid email address')
-    //         .required('required'),
-    //     password: Yup.string()
-    //         .min(6, 'at least 6 characters')
-    //         .max(15, 'mustn`t be more than 15 characters')
-    //         .required('Required')
-
-    //     }),
-    //     onSubmit: HandleFormSubmit()
-    // })
-
 
     return (
         <>
             <h1 style={ classes.registerHeader }>Register</h1>
             <FormBlock>
                 <Form 
-                onSubmit={ handleSubmit }
+                    onSubmit={ handleSubmit }
                 >
-                    <label htmlFor="firstName">First name</label>
+                    <label htmlFor="firstName">Name</label>
                     <InputField
-                        id='firstName'
+                        id='name'
                         type='text'
-                        placeholder='first name'
-                        name='firstName'
+                        placeholder='name'
+                        name='name'
                         onChange={ e => setName(e.target.value) }
                         value={ name }
                         required
                     />
-                    <label htmlFor="lastName">Last name</label>
+                    <label htmlFor="lastName">Login</label>
                     <InputField
-                        id='lastName'
+                        id='login'
                         type='text'
-                        placeholder='last name'
-                        name='lastName'
-                        onChange={ e => setLastName(e.target.value) }
-                        value={ lastName }
+                        placeholder='login'
+                        name='login'
+                        onChange={ e => setLogin(e.target.value) }
+                        value={ login }
                         required
                     />
                     <label htmlFor="password">Password</label>
@@ -200,21 +86,20 @@ const Registerpage = () => {
                         value={ password }
                         required
                     />
-                    <label htmlFor="checkPassword">Last name</label>
-                    <InputField
-                        id='checkpassword'
-                        type='password'
-                        placeholder='check password'
-                        name='checkPassword'
-                        onChange={ e => setCheck(e.target.value) }
-                        value={ check }
-                        required
-                    />
-                        <InputButton type='button' 
+                        <InputButton
+                            type='button' 
                             onClick={() => handleSubmit()}
                         >
                             submit
                         </InputButton>
+                        <div className={ `sss ${loadingShow && 'active'}` }>
+                            {isLoading ? <p>...loading</p> :
+                                <div>You`re sucessfully signed up! click button below to go next
+                                    <button onClick={() => navigate('/')}>CLICK</button>
+                                </div>
+                            }
+                        </div>
+                        
                 </Form>
             </FormBlock>
         </>

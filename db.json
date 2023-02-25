@@ -16,5 +16,42 @@
   "profile": {
     "name": "typicode"
   },
-  "users": {}
+  "users": [
+    {
+      "name": "123",
+      "login": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
+      "id": 1
+    },
+    {
+      "name": "123",
+      "login": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
+      "id": 2
+    },
+    {
+      "name": "123",
+      "login": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
+      "id": 3
+    },
+    {
+      "name": "321",
+      "login": "321",
+      "password": "caf1a3dfb505ffed0d024130f58c5cfa",
+      "id": 4
+    },
+    {
+      "name": "aliev",
+      "login": "aliev",
+      "password": "30bf8f7889e1a4da80f41c79c5cade07",
+      "id": 5
+    },
+    {
+      "name": "222",
+      "login": "222",
+      "password": "bcbe3365e6ac95ea2c0343a2395834dd",
+      "id": 6
+    }
+  ]
 }
