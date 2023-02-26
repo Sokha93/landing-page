@@ -10,7 +10,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import md5 from 'md5';
 import {useNavigate} from 'react-router-dom';
-import { signUp } from '../../api/api';
+import { signUp, CheckLogin } from '../../api/api';
 import './style.css';
 
 const classes = {
@@ -29,14 +29,29 @@ const Registerpage = () => {
     const [name,  setName] = useState('');
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('');
-    const [formTextError, setFormtextError] = useState(null);
+    const [TextError, setTextError] = useState(null);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            let result = await CheckLogin(login);
+            if(result.length > 0) {
+                setTextError('login exists, try to use another')
+            } else {
+                setTextError(null)
+            }
+
+            if(login.length > 3) {
+                fetchData()
+            }
+        }
+    }, [login])
 
 
     const handleSubmit = async event => {
-        // event.preventDefault();
         setIsLoading(true);
         setLoadingShow(true);
+
         let result = await signUp({ name, login, password: md5(password) });
         if(result) {
             setIsLoading(false);
@@ -46,7 +61,7 @@ const Registerpage = () => {
 
         };
         console.log(result);
-
+        
     }
 
     return (
@@ -56,6 +71,7 @@ const Registerpage = () => {
                 <Form 
                     onSubmit={ handleSubmit }
                 >
+                    {TextError &&  <p>{TextError}</p> }
                     <label htmlFor="firstName">Name</label>
                     <InputField
                         id='name'
@@ -88,7 +104,8 @@ const Registerpage = () => {
                     />
                         <InputButton
                             type='button' 
-                            onClick={() => handleSubmit()}
+                            // onClick={() => handleSubmit()}
+                            disabled
                         >
                             submit
                         </InputButton>
