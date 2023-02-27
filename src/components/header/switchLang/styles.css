@@ -1,0 +1,41 @@
+.select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #bdbdbf;
+    background-color: transparent;
+    outline: none;
+    border-radius: 4px;
+    min-width: 60px;
+    min-height: 24px;
+    color: #bdbdbf;
+    padding: 2px 8px 2px 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+    background-color: #272729;
+}
+
+.select:hover{
+    border: 1px solid #fff;
+}
+
+.select-wrapper{
+    position: relative;
+}
+.select-wrapper::before{
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 4px;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: #bdbdbf transparent transparent transparent;
+}
+
+.option{
+    height: 12px;
+}

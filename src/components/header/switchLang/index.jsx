@@ -3,6 +3,7 @@ import UseLanguage from '../../../context/multipleLanguages/hook';
 import Select from '@mui/material/Select';
 import { MenuItem, InputLabel, FormControl } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
+import './styles.css'
 
 
 const SwitchLang = () => {
@@ -15,10 +16,12 @@ const SwitchLang = () => {
 
     return (
         <div>
-            <select value={language} onChange={handleChange} name="" id="">
-                <option value="russian">rus</option>
-                <option value="english">eng</option>
-            </select>
+            <div className='select-wrapper'>
+                <select value={language} onChange={handleChange} className='select'>
+                    <option className='option' value="russian">RUS</option>
+                    <option className='option' value="english">ENG</option>
+                </select>
+            </div>
         </div>
     )
 };
