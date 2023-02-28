@@ -18,8 +18,8 @@ const SwitchLang = () => {
         <div>
             <div className='select-wrapper'>
                 <select value={language} onChange={handleChange} className='select'>
-                    <option className='option' value="russian">RUS</option>
-                    <option className='option' value="english">ENG</option>
+                    <option className='option' value="russian">{language === 'russian' ? t.russian_lang : t.lang_ru}</option>
+                    <option className='option' value="english">{language === 'russian' ? t.english_lang : t.lang_en}</option>
                 </select>
             </div>
         </div>
