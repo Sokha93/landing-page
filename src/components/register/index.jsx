@@ -12,6 +12,7 @@ import md5 from 'md5';
 import {useNavigate} from 'react-router-dom';
 import { signUp, CheckLogin } from '../../api/api';
 import './style.css';
+import { Loading } from '../../ui/loading';
 
 const classes = {
     registerHeader: {
@@ -32,20 +33,20 @@ const Registerpage = () => {
     const [TextError, setTextError] = useState(null);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            let result = await CheckLogin(login);
-            if(result.length > 0) {
-                setTextError('login exists, try to use another')
-            } else {
-                setTextError(null)
-            }
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         let result = await CheckLogin(login);
+    //         if(result.length > 0) {
+    //             setTextError('login exists, try to use another')
+    //         } else {
+    //             setTextError(null)
+    //         }
 
-            if(login.length > 3) {
-                fetchData()
-            }
-        }
-    }, [login])
+    //         if(login.length > 3) {
+    //             fetchData()
+    //         }
+    //     }
+    // }, [login])
 
 
     const handleSubmit = async event => {
@@ -57,7 +58,8 @@ const Registerpage = () => {
             setIsLoading(false);
             setName('')
             setLogin('');
-            setPassword('')
+            setPassword('');
+            navigate('/')
 
         };
         console.log(result);
@@ -104,16 +106,16 @@ const Registerpage = () => {
                     />
                         <InputButton
                             type='button' 
-                            // onClick={() => handleSubmit()}
-                            disabled
+                            onClick={() => handleSubmit()}
+                            // disabled
                         >
                             submit
                         </InputButton>
                         <div className={ `sss ${loadingShow && 'active'}` }>
-                            {isLoading ? <p>...loading</p> :
-                                <div>You`re sucessfully signed up! click button below to go next
-                                    <button onClick={() => navigate('/')}>CLICK</button>
-                                </div>
+                            {isLoading && <Loading /> 
+                                // <div>You`re sucessfully signed up! click button below to go next
+                                //     <button onClick={() => navigate('/')}>CLICK</button>
+                                // </div>
                             }
                         </div>
                         

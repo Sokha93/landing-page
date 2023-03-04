@@ -16,5 +16,12 @@
   "profile": {
     "name": "typicode"
   },
-  "users": []
+  "users": [
+    {
+      "name": "qweqwe",
+      "login": "qweqweqwe",
+      "password": "43cad01839fde27501a05309970fe4f7",
+      "id": 1
+    }
+  ]
 }

@@ -4,6 +4,7 @@ import Header from './components/header';
 import Routers from './routes/route';
 import  LanguageProvider  from './context/multipleLanguages/provider';
 import StickyHeader from './components/stickyHeader';
+import Footer from './components/footer';
 
 const  App = () => {
   return (
@@ -12,6 +13,7 @@ const  App = () => {
             <Header />
             {/* <StickyHeader /> */}
             <Routers />
+            <Footer />
         </div>
       </LanguageProvider>
   );
