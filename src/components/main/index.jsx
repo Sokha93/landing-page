@@ -1,18 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Container } from '@mui/system';
 import CarouselSlider from './carousel';
-import AddPosts from './mainBlock';
+import MainBlock from './mainBlock';
 import ScrollMenu from './scrollMenu';
 
 
 const Main = () => {
 
     return (
-        <Container>
+        <>
+            <MainBlock />
             <CarouselSlider />
-            <AddPosts />
             <ScrollMenu />
-        </Container>
+        </>
     )
 };
 

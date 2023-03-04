@@ -1,0 +1,28 @@
+.main-header {
+    width: 100%;
+    padding: 100px 0;
+    text-align: center;
+    background-image: url('../../../assets/images/strawberry.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.main-button{
+    min-width: 56px;
+    padding: 14px 34px;
+    background-color: #272729;
+    color: #fff;
+    border-radius: 28px;
+    border: none;
+    font-size: 19px;
+    text-transform: uppercase;
+    opacity: .7;
+    transition: all .3s;
+}
+.main-button:hover{
+    opacity: 1;
+}

@@ -31,7 +31,7 @@ const styles = {
         cursor: 'pointer',
     },
     closeIconStyle: {
-        color: '#000'
+        color: '#fff',
     }
 }
 
@@ -97,11 +97,45 @@ const HeaderMenu = () => {
                         </Link>
                     </MobileLinks>
                     <div>
-                        <MobileLinks
-                            to={'/login'}
-                            onClick={ () => setOpenMobileModal(false) }
-                        >
-                            login
+                        <MobileLinks>
+                            <Link
+                                to={'/login'}
+                                onClick={ () => setOpenMobileModal(false) }
+                            >
+                                login
+                            </Link>
+                        </MobileLinks>
+                        <MobileLinks>
+                            <Link
+                                to={'/'}
+                                onClick={ () => setOpenMobileModal(false) }
+                            >
+                                О нас
+                            </Link>
+                        </MobileLinks>
+                        <MobileLinks>
+                            <Link
+                                to={'/'}
+                                onClick={ () => setOpenMobileModal(false) }
+                            >
+                                Новости
+                            </Link>
+                        </MobileLinks>                        
+                        <MobileLinks>
+                            <Link
+                                to={'/'}
+                                onClick={ () => setOpenMobileModal(false) }
+                            >
+                                Контакты
+                            </Link>
+                        </MobileLinks>
+                        <MobileLinks>
+                            <Link
+                                to={'/'}
+                                onClick={ () => setOpenMobileModal(false) }
+                            >
+                                Интересно
+                            </Link>
                         </MobileLinks>
                     </div>
                 </MobileModal>

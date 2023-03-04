@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 export const MainBlock = styled.div`
     height: 48px;
@@ -7,11 +7,25 @@ export const MainBlock = styled.div`
     align-items: center;
 `;
 
+const breathe = keyframes`
+    0%{
+        opacity: 0;
+        translate: 0 50px;
+    }
+    100%{
+        opacity: 1;
+    }
+`
+
 export const MenuAndSelect = styled.div`
     width: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: 699px){
+        display: flex;
+        justify-content: flex-end;
+    }
 
 `;
 
@@ -61,9 +75,12 @@ export const Navbar = styled.nav`
         background-position: center center;
         font-size: 14px;
         transition: all 0.5s;
+        animation: ${breathe} 0.3 backwards;
+
         &:hover {
             color: #fff;
             transition: all 0.3s;
+            /* border-bottom: 1px solid red; */
         }
         &:active {
             color: #fff;
@@ -124,20 +141,22 @@ export const DropDown = styled.div`
 
 export const MobileModal = styled.div`
     display: ${props => props.opened ? 'block' : 'none'};
+    width: 100%;
+    height: 100%;
     z-index: 9999;
-    position: absolute;
-    background-color: #fff;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-size: cover;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
+    overflow: auto;
     @media(min-width: 699px) {
         display: none;
     }
 `;
 
 export const MobileLinks = styled.div`
-
+    color: #fff;
 `;
 
 export const StyledLink = styled(Link)`

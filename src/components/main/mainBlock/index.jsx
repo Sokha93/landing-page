@@ -1,34 +1,14 @@
 import React, { useState } from 'react';
-import { Container } from '@mui/material';
+import'./styles.scss'
 
-const AddPosts = () => {
-
-
-    const [arr, setArr] = useState([]);
-    const [value, setValue] = useState('');
-
-    const result = arr.map((element, index) => {
-        return(
-            <p key={index}>
-                {element}
-            </p>
-        )
-    })  
-
-
-    const add = () => {
-        setArr([...arr, value])
-        setValue('')
-    }
-
+const MainBlock = () => {
     return (
-        <Container>
-            <input value={value} onChange={(e) => setValue(e.target.value)} type="text" />
-            <button onClick={add} disabled={value.length === 0}>post</button>
-            <p>{ result }</p>
-            
-        </Container>
+        <>
+            <div className='main-header'>
+                <button className='main-button'>watch more</button>
+            </div>
+        </>
     )
 };
 
-export default AddPosts;
+export default MainBlock;

@@ -15,7 +15,7 @@ const SwitchLang = () => {
     }
 
     return (
-        <div>
+        <div className='switchlang-block'>
             <div className='select-wrapper'>
                 <select value={language} onChange={handleChange} className='select'>
                     <option className='option' value="russian">{language === 'russian' ? t.russian_lang : t.lang_ru}</option>

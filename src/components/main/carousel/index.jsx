@@ -27,27 +27,12 @@ const CarouselSlider = () => {
 
     return(
         <>
-            <div className='main-header'>
-                <div className='h1'>{t.welcome}</div>
-                <div className='p'>{t.main_text}</div>
-                <div className='testing-block'>
-                    <div className='testing-block2'>
-                        <p>Временный блок!!!</p>
-                        <p>
-                            Описание...<br/>
-                            Работает мультиязычность(кроме этого блока).
-                            Добавлены 2 модалки десктоп и мобайл, осталось доработать дизайн мобильной версии модалки, это в процессе.
-                            Доработка селектор языков, страница авторизации регистрации, добавление постов в впроцессе.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
             <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
             }}>
-                
                 <div style={{
                     width: '800px',
                     backgroundColor: '#fff',
