@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import LoginIcon from '@mui/icons-material/Login';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import Divider from '@mui/material/Divider';
 import {
     MenuIcons,
     Desktopview,
@@ -11,9 +9,14 @@ import {
     MobileModal,
     DesktopLinks,
     MobileLinks,
-    StyledLink
+    StyledLink,
+    LogoBlock,
+    LogoSpan,
+    CloseButtonBlock,
+    CloseButton,
+    MobileLogo
 } from '../../../styles/styledComponents/header';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const styles = {
     loginIconStyle: {
@@ -40,7 +43,12 @@ const HeaderMenu = () => {
     const [openDesktopModal, setOpenDesktopModal] = useState(false);
     const [openMobileModal, setOpenMobileModal] = useState(false);
     const clickOutside = useRef();
+    const navigate = useNavigate()
 
+    const handleClose = () => {
+        navigate('/');
+        setOpenMobileModal(false)
+    }
     useEffect(() => {
         document.addEventListener('mousedown', handleClick);
 
@@ -55,6 +63,15 @@ const HeaderMenu = () => {
         };
         setOpenDesktopModal(false);
     }
+
+    const obj = [
+        {id: 1, name: 'register'},
+        {id: 2, name: 'login'},
+        {id: 3, name: 'about us'},
+        {id: 4, name: 'news'},
+        {id: 5, name: 'contacts'},
+        {id: 6, name: 'interesting'}
+    ]
     return (
         <MenuIcons>
             <Desktopview>
@@ -86,58 +103,26 @@ const HeaderMenu = () => {
                     <MenuIcon style={ styles.menuIconStyle }/>
                 </div>
                 <MobileModal opened={ openMobileModal }>
-                    <div style={ styles.closeIconStyle } onClick={ () => setOpenMobileModal(false) }><CloseIcon/></div>
-                    <Divider variant='middle'/>
-                    <MobileLinks>
-                        <Link
-                            to={'/register'}
-                            onClick={ () => setOpenMobileModal(false) }
-                        >
-                            register
-                        </Link>
-                    </MobileLinks>
-                    <div>
-                        <MobileLinks>
-                            <Link
-                                to={'/login'}
-                                onClick={ () => setOpenMobileModal(false) }
-                            >
-                                login
-                            </Link>
-                        </MobileLinks>
-                        <MobileLinks>
-                            <Link
-                                to={'/'}
-                                onClick={ () => setOpenMobileModal(false) }
-                            >
-                                О нас
-                            </Link>
-                        </MobileLinks>
-                        <MobileLinks>
-                            <Link
-                                to={'/'}
-                                onClick={ () => setOpenMobileModal(false) }
-                            >
-                                Новости
-                            </Link>
-                        </MobileLinks>                        
-                        <MobileLinks>
-                            <Link
-                                to={'/'}
-                                onClick={ () => setOpenMobileModal(false) }
-                            >
-                                Контакты
-                            </Link>
-                        </MobileLinks>
-                        <MobileLinks>
-                            <Link
-                                to={'/'}
-                                onClick={ () => setOpenMobileModal(false) }
-                            >
-                                Интересно
-                            </Link>
-                        </MobileLinks>
-                    </div>
+                    <MobileLogo onClick={ handleClose }>
+                        <LogoBlock mobileLogo>
+                            SN<LogoSpan mobileSpan>project</LogoSpan>
+                        </LogoBlock>
+                    </MobileLogo>
+                    {
+                        obj.map((elem, index) => (
+                            <MobileLinks key={index}>
+                                <StyledLink
+                                    to={'/'}
+                                    onClick={() => setOpenMobileModal(false)}
+                                >
+                                    {elem.name}
+                                </StyledLink>
+                            </MobileLinks>
+                        ))
+                    }
+                    <CloseButtonBlock>
+                        <CloseButton onClick={() => setOpenMobileModal(false)}>CLOSE</CloseButton>
+                    </CloseButtonBlock>
                 </MobileModal>
             </Mobileview>
         </MenuIcons>

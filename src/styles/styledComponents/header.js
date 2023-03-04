@@ -34,25 +34,21 @@ export const LogoBlock = styled.div`
     color: #bdbdbf;
     font-size: 18px;
     transition: all .3s;
+    cursor: pointer;
     &:hover {
         color: #fff
     }
-    @media(max-width: 599px) {
-        font-size: 16px;
-    }
-    @media(max-width: 499px) {
-        font-size: 14px;
+    @media(max-width: 699px){
+        padding: ${props => props.mobileLogo ? '8px 16px' : null};
+        font-size: ${props => props.mobileLogo ? '28px' : '18px'};
     }
 `;
 
 export const LogoSpan = styled.span`
     font-size: 8px;
     margin-left: 4px;
-    @media(max-width: 559px) {
-        font-size: 7px;
-    }
-    @media(max-width: 499px) {
-        font-size: 6px;
+    @media(max-width: 699px){
+        font-size: ${props => props.mobileSpan ? '12px' : '8px'};
     }
 `;
 
@@ -110,6 +106,7 @@ export const Mobileview = styled.div`
     display: none;
     @media(max-width: 699px) {
         display: block;
+        position: relative;
     }
 `;
 
@@ -145,7 +142,7 @@ export const MobileModal = styled.div`
     height: 100%;
     z-index: 9999;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #272729;
     background-size: cover;
     top: 0;
     left: 0;
@@ -156,7 +153,24 @@ export const MobileModal = styled.div`
 `;
 
 export const MobileLinks = styled.div`
-    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+
+    /* text-align: start; */
+
+    & > a{
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #bdbdbf;
+        transition: all .3s;
+        font-size: 18px;
+        padding-left: 12px;
+        margin-top: 12px;
+
+        &:hover{
+            color: #fff;
+        }
+    }
 `;
 
 export const StyledLink = styled(Link)`
@@ -165,12 +179,37 @@ export const StyledLink = styled(Link)`
     color: #bdbdbf;
     transition: all .3s;
     margin-bottom: 12px;
-    
-
 
     &:hover{
 
         color: #fff;
+    }
+`;
+
+export const MobileLogo = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+export const CloseButtonBlock = styled.div`
+    position: fixed;
+    bottom: 44px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+`;
+
+export const CloseButton = styled.button`
+    padding: 12px 0 12px 0;
+    width: 60%;
+    border-radius: 8px;
+    border: none;
+    background-color: #bdbdbf;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #fff;
     }
 `;
 
