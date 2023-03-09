@@ -120,7 +120,7 @@ export const DropDown = styled.div`
     border-radius: 4px;
     padding: 12px;
     color: #000;
-    box-shadow: 1px 10px 10px 0 rgba(0, 59, 110, 0.1);
+    box-shadow: 1px 10px 10px 0 rgba(0, 81, 93, 0.1);
 
     &::before {
         content: '';
