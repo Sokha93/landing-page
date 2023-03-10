@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { ServerUrl } from '../../../api/config';
-import axios from 'axios';
+import useFetch from './usefetch';
 
 const EmailForm = () => {
-
-    const [state, setState] = useState();
-    useEffect(() => {
-        getUrl();
-    })
+    const [data, setData] =useState(null);
     
-    const getUrl = async (blob) => {
-        return await axios(`https://dog.ceo/api/breeds/image/random`, {
-            method: 'GET',
-            body: blob
-        })
-        .then(res=>setState(res.json))
-        .then(res=>console.log(res))
-    }
+    // const {data, loading, error} = useFetch(`https://dog.ceo/api/breeds/list/all`)
 
-    
+    // if (loading) return <h1>LOADIng</h1>
+    // if(error)  console.log(error)
+
+    // useEffect(()=> {
+    //     fetch(`https://dog.ceo/api/breed/hound/list`, {
+    //         method: 'GET'
+    //     })
+    //     .then(resp => resp.json())
+    //     .then(response => setData(response.message))
+    //     .then(res=> console.log(res.message))
+    // }, [data])
+
+
     return(
         <>
-        {`${state}sdfsdfsdf`}
-            EmailForm
+
+        {/* <img src={data} width={500} alt="" /> */}
         </>
     )
 };
