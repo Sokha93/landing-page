@@ -21,8 +21,7 @@ const EmailForm = () => {
 
     return(
         <>
-
-        {/* <img src={data} width={500} alt="" /> */}
+            ролр
         </>
     )
 };
