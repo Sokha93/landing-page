@@ -14,6 +14,8 @@ $posrel: relative;
   background-color: $bgColor;
   width: $w100;
   height: $h80px;
+  position: fixed;
+  z-index: 999;
   // @media(max-width: 699px) {
   //   height: 70px;
   // }
@@ -28,4 +30,23 @@ $posrel: relative;
   content: '';
   display: table;
   clear: both;
+}
+
+.header-block{
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  background-color: #272729;
+  // padding-left: 100px;
+  // padding-right: 100px;
 }

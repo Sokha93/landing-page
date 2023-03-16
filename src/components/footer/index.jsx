@@ -6,11 +6,19 @@ import SocialLinks from './socialLinks';
 
 const Footer = () => {
     return (
-        <Container>
-            <FooterNavs />
-            <EmailForm />
-            <SocialLinks />
-        </Container>
+            <footer style={{
+                width: '100%',
+                height: '220px',
+                backgroundColor: '#272729',
+                borderTop: '12px solid #564D66',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+            }}>
+                    <SocialLinks />
+                    <FooterNavs />
+                {/* <EmailForm /> */}
+            </footer>
     )
 };
 

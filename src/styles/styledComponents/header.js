@@ -7,16 +7,6 @@ export const MainBlock = styled.div`
     align-items: center;
 `;
 
-const breathe = keyframes`
-    0%{
-        opacity: 0;
-        translate: 0 50px;
-    }
-    100%{
-        opacity: 1;
-    }
-`
-
 export const MenuAndSelect = styled.div`
     width: 150px;
     display: flex;
@@ -71,7 +61,6 @@ export const Navbar = styled.nav`
         background-position: center center;
         font-size: 14px;
         transition: all 0.5s;
-        animation: ${breathe} 0.3 backwards;
 
         &:hover {
             color: #fff;
