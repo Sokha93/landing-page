@@ -10,7 +10,7 @@ const Main = () => {
     return (
         <>
             <MainBlock />
-            {/* <CarouselSlider /> */}
+            <CarouselSlider />
             <ScrollMenu />
         </>
     )

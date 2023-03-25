@@ -4,7 +4,7 @@ import { MainBlock } from '../../styles/styledComponents/register';
 const LoginPage = () => {
     return (
         <MainBlock>
-            log - in
+            log - in page in a progress
         </MainBlock>
     )
 };

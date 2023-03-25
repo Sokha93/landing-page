@@ -52,24 +52,26 @@ export const Form = styled.form`
 `;
 
 export const InputButton = styled.button`
-      height: 52px;
-      padding: 4px;
-      border-radius: 4px;
-      border: 1px solid transparent;
-      background-color: #272729;
-      color: #bdbdbf;
-      box-shadow: 1px 10px 10px 0 rgba(0, 59, 110, 0.1);
-      transition: all .3s;
-      text-transform: uppercase;
-      font-weight: 500;
-      letter-spacing: 1px;
-      font-size: large;
+  margin-top: 22px;
+  height: 60px;
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  background-color: #272729;
+  color: #bdbdbf;
+  box-shadow: 1px 10px 10px 0 rgba(0, 59, 110, 0.1);
+  transition: all .3s;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: large;
+  cursor: pointer;
 
-      &:hover {
-        /* background-color: #fff; */
-        color: #fff;
-      }
-      &:active {
-        background-color: green;
-      }
+  &:hover {
+    /* background-color: #fff; */
+    color: #fff;
+  }
+  &:active {
+    background-color: green;
+  }
 `;

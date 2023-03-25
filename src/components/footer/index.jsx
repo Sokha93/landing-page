@@ -7,6 +7,7 @@ import SocialLinks from './socialLinks';
 const Footer = () => {
     return (
             <footer style={{
+                marginTop: '40px',
                 width: '100%',
                 height: '220px',
                 backgroundColor: '#272729',

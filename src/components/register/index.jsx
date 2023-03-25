@@ -13,13 +13,15 @@ import {useNavigate} from 'react-router-dom';
 import { signUp, CheckLogin } from '../../api/api';
 import './style.css';
 import { Loading } from '../../ui/loading';
+import useLanguage from '../../context/multipleLanguages/hook';
 
 const classes = {
     registerHeader: {
         textAlign: 'center',
         marginTop: '50px',
         textTransform: 'uppercase',
-        letterSpacing: '1.5px'
+        letterSpacing: '1.5px',
+        fontSize: '22px'
     }
 }
 
@@ -32,6 +34,7 @@ const Registerpage = () => {
     const [password, setPassword] = useState('');
     const [TextError, setTextError] = useState(null);
     const navigate = useNavigate();
+    const {t} = useLanguage()
 
     // useEffect(() => {
     //     const fetchData = async () => {
@@ -68,56 +71,56 @@ const Registerpage = () => {
 
     return (
         <>
-            <h1 style={ classes.registerHeader }>Register</h1>
+            <h1 style={ classes.registerHeader }>{t.registration}</h1>
             <FormBlock>
                 <Form 
                     onSubmit={ handleSubmit }
                 >
                     {TextError &&  <p>{TextError}</p> }
-                    <label htmlFor="firstName">Name</label>
-                    <InputField
-                        id='name'
-                        type='text'
-                        placeholder='name'
-                        name='name'
-                        onChange={ e => setName(e.target.value) }
-                        value={ name }
-                        required
-                    />
-                    <label htmlFor="lastName">Login</label>
-                    <InputField
-                        id='login'
-                        type='text'
-                        placeholder='login'
-                        name='login'
-                        onChange={ e => setLogin(e.target.value) }
-                        value={ login }
-                        required
-                    />
-                    <label htmlFor="password">Password</label>
-                    <InputField
-                        id='password'
-                        placeholder='password'
-                        type='password'
-                        name='password'
-                        onChange={ e => setPassword(e.target.value) }
-                        value={ password }
-                        required
-                    />
-                        <InputButton
-                            type='button' 
-                            onClick={() => handleSubmit()}
-                            // disabled
-                        >
-                            submit
-                        </InputButton>
-                        <div className={ `sss ${loadingShow && 'active'}` }>
-                            {isLoading && <Loading /> 
-                                // <div>You`re sucessfully signed up! click button below to go next
-                                //     <button onClick={() => navigate('/')}>CLICK</button>
-                                // </div>
-                            }
-                        </div>
+                    <div className='textbox'>
+                        <input
+                            id='name'
+                            type='text'
+                            placeholder={t.name}
+                            name='name'
+                            onChange={ e => setName(e.target.value) }
+                            value={ name }
+                            required
+                        />
+                        <label htmlFor="firstName" className='labels'>{t.name}</label>
+                    </div>
+                    <div className='textbox'>
+                        <input
+                            id='login'
+                            type='text'
+                            placeholder={t.login}
+                            name='login'
+                            onChange={ e => setLogin(e.target.value) }
+                            value={ login }
+                            required
+                        />
+                        <label htmlFor="lastName" className='labels'>{t.login}</label>
+                    </div>
+                    <div className='textbox'>
+                        <input
+                            id='password'
+                            placeholder={t.password}
+                            type='password'
+                            name='password'
+                            onChange={ e => setPassword(e.target.value) }
+                            value={ password }
+                            required
+                        />
+                        <label htmlFor="password" className='labels'>{t.password}</label>
+                    </div>
+                    <InputButton
+                        type='button' 
+                        onClick={() => handleSubmit()}
+                        // disabled
+                    >
+                        submit
+                    </InputButton>
+                        {/* <div className={ `sss ${loadingShow && 'active'}` }></div> */}
                         
                 </Form>
             </FormBlock>

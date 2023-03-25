@@ -7,7 +7,12 @@
         "contacts": "Контакты",
         "interesting": "Интересно",
         "english_lang": "Анг",
-        "all_projects": "Все проекты"
+        "all_projects": "Все проекты",
+        "show_more": "Показать больше",
+        "name": "Имя",
+        "login": "Логин",
+        "password": "Пароль",
+        "registration": "Регистрация"
     },
     "english" : {
         "title": "Project",
@@ -17,6 +22,11 @@
         "news": "News",
         "contacts": "Contacts",
         "interesting": "Interesting",
-        "all_projects": "All projects"
+        "all_projects": "All projects",
+        "show_more": "show more",
+        "name": "Name",
+        "login": "Login",
+        "password": "Password",
+        "registration": "Sign up"
     }
 }
