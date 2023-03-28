@@ -12,7 +12,10 @@
         "name": "Имя",
         "login": "Логин",
         "password": "Пароль",
-        "registration": "Регистрация"
+        "registration": "Регистрация",
+        "add_name": "Введите имя",
+        "add_login": "Введите логин",
+        "add_password": "Введите пароль"
     },
     "english" : {
         "title": "Project",
@@ -27,6 +30,9 @@
         "name": "Name",
         "login": "Login",
         "password": "Password",
-        "registration": "Sign up"
+        "registration": "Sign up",
+        "add_name": "Type name",
+        "add_login": "Type login",
+        "add_password": "Type password"
     }
 }

@@ -81,7 +81,7 @@ const Registerpage = () => {
                         <input
                             id='name'
                             type='text'
-                            placeholder={t.name}
+                            placeholder={t.add_name}
                             name='name'
                             onChange={ e => setName(e.target.value) }
                             value={ name }
@@ -93,7 +93,7 @@ const Registerpage = () => {
                         <input
                             id='login'
                             type='text'
-                            placeholder={t.login}
+                            placeholder={t.add_login}
                             name='login'
                             onChange={ e => setLogin(e.target.value) }
                             value={ login }
@@ -104,7 +104,7 @@ const Registerpage = () => {
                     <div className='textbox'>
                         <input
                             id='password'
-                            placeholder={t.password}
+                            placeholder={t.add_password}
                             type='password'
                             name='password'
                             onChange={ e => setPassword(e.target.value) }

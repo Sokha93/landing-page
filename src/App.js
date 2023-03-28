@@ -11,10 +11,10 @@ const  App = () => {
       <LanguageProvider>
           <div className='header'>
             <Header />
-            </div>
+          </div>
             {/* <StickyHeader /> */}
-            <Routers />
-            <Footer />
+          <Routers />
+          <Footer />
       </LanguageProvider>
   );
 }

@@ -9,7 +9,8 @@ const Footer = () => {
             <footer style={{
                 marginTop: '40px',
                 width: '100%',
-                height: '220px',
+                height: '100%',
+                minHeight: '220px',
                 backgroundColor: '#272729',
                 borderTop: '12px solid #564D66',
                 display: 'flex',
