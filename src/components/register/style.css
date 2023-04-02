@@ -1,11 +1,3 @@
-.sss{
-    display: none;
-    margin-top: 20px;
-}
-.sss.active{
-    display: flex;
-}
-
 .textbox{
     position: relative;
     margin-top: 24px;
@@ -55,4 +47,10 @@
     background: none;
     font-size: 18px;
     color: #272729;
+}
+
+
+.loginBlock{
+    display: flex;
+    justify-content: center;
 }

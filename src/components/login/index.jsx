@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import {withRouter} from 'react-router-dom';
+import '../register/style.css'
 import md5 from 'md5';
 import AuthHook from '../../context/auth/hook';
 import { SignIn, UpdateUserInfo } from '../../api/api';
 import { useNavigate } from 'react-router-dom';
+import { InputButton } from '../../styles/styledComponents/register';
+import { FormBlock, Form } from '../../styles/styledComponents/register&login';
 
 const LoginPage = () => {
 
@@ -43,26 +45,38 @@ const LoginPage = () => {
     }
 
     return (
-        <div>
-            <form action="" onSubmit={handleFormSubmit}>
-                <h1>login</h1>
+        <FormBlock>
+            <Form action="" onSubmit={handleFormSubmit}>
+                <h1 style={{textAlign: 'center'}}>login</h1>
                 {errorText && <div>{errorText}</div>}
-                <input
-                    type="text"
-                    value={login}
-                    onChange={e => setLogin(e.target.value)}
-                    placeholder={'login'} 
-                />
-                <input 
-                    type="password"
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
-                    placeholder={'password'}
-                />
-                <button type='submit'>submit</button>
+                <div className='textbox'>
+                    <input
+                        id='login'
+                        type="text"
+                        name='login'
+                        value={login}
+                        onChange={e => setLogin(e.target.value)}
+                        placeholder={'login'}
+                        required
+                    />
+                    <label htmlFor="login" className='labels'>login</label>
+                </div>
+                <div className='textbox'>
+                    <input
+                        id='password'
+                        type="password"
+                        name='password'
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        placeholder={'password'}
+                        required
+                    />
+                    <label htmlFor="pasword" className='labels'>password</label>
+                </div>
+                <InputButton type='submit'>SUBMIT</InputButton>
                 {showLoading && 'loading ......'}
-            </form>
-        </div>
+            </Form>
+        </FormBlock>
     )
 };
 
