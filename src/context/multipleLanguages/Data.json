@@ -15,7 +15,8 @@
         "registration": "Регистрация",
         "add_name": "Введите имя",
         "add_login": "Введите логин",
-        "add_password": "Введите пароль"
+        "add_password": "Введите пароль",
+        "posts": "Посты"
     },
     "english" : {
         "title": "Project",
@@ -33,6 +34,7 @@
         "registration": "Sign up",
         "add_name": "Type name",
         "add_login": "Type login",
-        "add_password": "Type password"
+        "add_password": "Type password",
+        "posts": "Posts"
     }
 }

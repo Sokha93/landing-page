@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from '../components/home';
 import Registerpage from '../components/register';
 import LoginPage from '../components/login';
+import Posts from '../components/posts';
 
 const Routers = () => {
     return(
@@ -21,6 +22,11 @@ const Routers = () => {
                 path="/"
                 exact
                 element={ <HomePage /> }
+            />
+            <Route 
+                path="posts"
+                exact
+                element={ <Posts /> }
             />
         </Routes>
     )

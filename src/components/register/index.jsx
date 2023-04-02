@@ -18,7 +18,7 @@ import useLanguage from '../../context/multipleLanguages/hook';
 const classes = {
     registerHeader: {
         textAlign: 'center',
-        marginTop: '50px',
+        marginTop: 0,
         textTransform: 'uppercase',
         letterSpacing: '1.5px',
         fontSize: '22px'
@@ -70,7 +70,7 @@ const Registerpage = () => {
     }
 
     return (
-        <>
+        <div style={{padding: '40px'}}>
             <h1 style={ classes.registerHeader }>{t.registration}</h1>
             <FormBlock>
                 <Form 
@@ -116,15 +116,13 @@ const Registerpage = () => {
                     <InputButton
                         type='button' 
                         onClick={() => handleSubmit()}
-                        // disabled
                     >
                         submit
                     </InputButton>
-                        {/* <div className={ `sss ${loadingShow && 'active'}` }></div> */}
                         
                 </Form>
             </FormBlock>
-        </>
+        </div>
     )
 };
 

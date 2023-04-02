@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FormBlock = styled.div`
+export const FormBlock = styled.form`
     display: flex;
     justify-content: center;
     /* margin-top: 50px; */
@@ -10,7 +10,6 @@ export const MainBlock = styled.section`
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: red;
 `;
 
 export const InputField = styled.input`

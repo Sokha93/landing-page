@@ -14,7 +14,7 @@ const  App = () => {
           </div>
             {/* <StickyHeader /> */}
           <Routers />
-          <Footer />
+          {/* <Footer /> */}
       </LanguageProvider>
   );
 }

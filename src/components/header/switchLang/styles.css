@@ -26,7 +26,7 @@
 .select-wrapper{
     position: relative;
 }
-/* .select-wrapper::before{
+.select-wrapper::before{
     content: "";
     position: absolute;
     top: 8px;
@@ -37,7 +37,7 @@
     border-style: solid;
     border-width: 8px 5px 0 5px;
     border-color: #bdbdbf transparent transparent transparent;
-} */
+}
 
 .option{
     height: 12px;
